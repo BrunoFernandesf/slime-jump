@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
+    Rigidbody2D rb;
+    float velocidade = 5.0f;
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }   
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if(Input.GetKey(KeyCode.Space))
+        {
+            //Aplica a movimentação a posição atual
+            rb.MovePosition(transform.position + new Vector3(0, 1, 0) * velocidade * Time.deltaTime);
+        }
     }
 }
