@@ -21,7 +21,7 @@ public class SpawnPlataforma : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(2);
-            Instantiate(Plataforma, new Vector3(12, 0, 0), Quaternion.identity);
+            Instantiate(Plataforma, new Vector3(12, Random.Range(-2.5f, 4.5f), 0), Quaternion.identity);
         }
     }
     
