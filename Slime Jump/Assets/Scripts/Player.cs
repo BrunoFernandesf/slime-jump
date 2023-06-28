@@ -18,5 +18,11 @@ public class Player : MonoBehaviour
             //Aplica a movimentação a posição atual
             rb.MovePosition(transform.position + new Vector3(0, 1, 0) * velocidade * Time.deltaTime);
         }
+
+        //Valida a posição para pausar o jogo (Game Over)
+        if(transform.position.y < -6)
+        {
+            Time.timeScale = 0;
+        }
     }
 }
